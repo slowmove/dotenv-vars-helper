@@ -1,5 +1,7 @@
 dotenv-vars-helper
 ===
+[![Build Status](https://travis-ci.org/slowmove/dotenv-vars-helper.svg?branch=master)](https://travis-ci.org/slowmove/dotenv-vars-helper)
+
 
 When using environment variables, either in Heroku or thru a local `.env` file (use for example my package [dotenv-vars](https://www.npmjs.com/package/dotenv-vars) to read them as process environment variables) all variables are set as strings. This is not optimal when you want to use them as toggles (booleans) or to hold some kind of integer value. This package help you out resolving this.
 
