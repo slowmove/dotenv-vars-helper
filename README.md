@@ -9,9 +9,12 @@ When using environment variables, either in Heroku or thru a local `.env` file (
 
 ## Usage
 
-This package is exposing two methods
+This package is exposing three methods
 
 - `isSet("key")` which should be used for toggles and will give you a boolean, `true | false` where any other string than `true` will give you `false`
+
+- `enabled("key")` gives you a boolean as well, but any string but "false" and bool false gives you `true`.
+
 - `correctedType(key)` which give you the value in the "correct" type, i.e. bool if it has a string value that is "true" or "false", number if it has a string value that really is a number etc.
 
 Having your environment variables set in `process.env` via for example the package mentioned above, you can use this package as below
