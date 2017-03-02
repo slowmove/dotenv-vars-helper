@@ -1,0 +1,15 @@
+node_modules
+npm-debug.log
+.env
+cookies.json
+.DS_Store
+dump.rdb
+coverage
+
+# Visual Studio Code
+.vscode
+jsconfig.json
+/nbproject/private/
+
+# Netbeans
+nbproject

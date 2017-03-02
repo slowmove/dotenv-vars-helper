@@ -1,0 +1,18 @@
+{
+  "name": "dotenv-vars-helper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "istanbul": "^0.4.5",
+    "jasmine-core": "^2.5.2",
+    "jasmine": "^2.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "NODE_ENV=test $(npm bin)/istanbul cover $(npm bin)/jasmine"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
