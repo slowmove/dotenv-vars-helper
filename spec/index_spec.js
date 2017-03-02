@@ -26,6 +26,34 @@ describe("Environment Helper", () => {
     });
   });
 
+  describe("enabled", () => {
+    beforeAll(() => {
+      process.env.trueBoolTest = true;
+      process.env.falseBoolTest = false;
+      process.env.trueTest = "true";
+      process.env.falseTest = "false";
+      process.env.stringTest = "hello hi";
+    });
+    it("should return true if value is set and not false", () => {
+      expect(envHelper.enabled("trueBoolTest")).toBe(true)
+    });
+    it("should return true if string value, not false string", () => {
+      expect(envHelper.enabled("stringTest")).toBe(true);
+    });
+    it("should return false if value false as bool", () => {
+      expect(envHelper.enabled("falseBoolTest")).toBe(false);
+    });
+    it("should return false if value false as string", () => {
+      expect(envHelper.enabled("falseTest")).toBe(false);
+    });
+    it("should return false if value is non existend", () => {
+      expect(envHelper.enabled("nonExistend")).toBe(false);
+    });
+    it("should not break if featureToggles is not set", () => {
+      expect(envHelper.enabled("nonExistend")).toBe(false);
+    });
+  });
+
   describe("correctedType", () => {
     beforeAll(() => {
       process.env.numberTest = "763281";

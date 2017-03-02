@@ -7,6 +7,15 @@ const envHelper = {
     return false;
   },
 
+  enabled: (key) => {
+    if (process.env[key] &&
+      process.env[key] !== false &&
+      process.env[key] !== "false") {
+      return true;
+    }
+    return false;
+  },
+
   correctedType: (key) => {
     const stringVal = process.env[key];
     if (stringVal === "true" || stringVal === "false") {
