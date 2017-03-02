@@ -13,6 +13,13 @@
     "test": "NODE_ENV=test $(npm bin)/istanbul cover $(npm bin)/jasmine"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "erik.johansson87@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slowmove/dotenv-vars-helper"
+  },
+  "bugs": {
+    "url": "https://github.com/slowmove/dotenv-vars-helper/issues"
+  }
 }
