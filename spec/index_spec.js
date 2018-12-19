@@ -54,6 +54,36 @@ describe("Environment Helper", () => {
     });
   });
 
+  describe("value", () => {
+    beforeAll(() => {
+      process.env.numberTest = "763281";
+      process.env.booleanTest = "true";
+      process.env.trueTest = true;
+      process.env.booleanTestFalse = "false";
+      process.env.falseTest = false;
+      process.env.smallInt = "1";
+      process.env.stringTest = "hello hi";
+    });
+    it("should return correct types as default", () => {
+      expect(envHelper.value("numberTest")).toBe(763281);
+      expect(envHelper.value("booleanTest")).toBe(true);
+      expect(envHelper.value("trueTest")).toBe(true);
+      expect(envHelper.value("booleanTestFalse")).toBe(false);
+      expect(envHelper.value("falseTest")).toBe(false);
+      expect(envHelper.value("smallInt")).toBe(1);
+      expect(envHelper.value("stringTest")).toBe("hello hi");
+    });
+    it("should return everything as string if explicit told to", () => {
+      expect(envHelper.value("numberTest", false)).toBe("763281");
+      expect(envHelper.value("booleanTest", false)).toBe("true");
+      expect(envHelper.value("trueTest", false)).toBe("true");
+      expect(envHelper.value("booleanTestFalse", false)).toBe("false");
+      expect(envHelper.value("falseTest", false)).toBe("false");
+      expect(envHelper.value("smallInt", false)).toBe("1");
+      expect(envHelper.value("stringTest", false)).toBe("hello hi");
+    });
+  });
+
   describe("correctedType", () => {
     beforeAll(() => {
       process.env.numberTest = "763281";

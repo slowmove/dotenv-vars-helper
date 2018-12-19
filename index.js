@@ -16,6 +16,11 @@ const envHelper = {
     return false;
   },
 
+  value: (key, correctType = true) => {
+    if (!correctType) return process.env[key];
+    return envHelper.correctedType(key);
+  },
+
   correctedType: (key) => {
     const stringVal = process.env[key];
     if (stringVal === "true" || stringVal === "false") {
